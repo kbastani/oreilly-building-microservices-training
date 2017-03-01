@@ -1,0 +1,11 @@
+name: "user-service"
+memory: 1024M
+instances: 1
+path: target/user-service-0.0.1-SNAPSHOT.jar
+buildpack: java_buildpack
+services:
+- user-db
+- discovery-service
+disk_quota: 1024M
+host: user-service
+domain: local.pcfdev.io

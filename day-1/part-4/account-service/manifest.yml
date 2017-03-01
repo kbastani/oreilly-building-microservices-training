@@ -1,0 +1,11 @@
+name: "account-service"
+memory: 1024M
+instances: 1
+path: target/account-service-0.0.1-SNAPSHOT.jar
+buildpack: java_buildpack
+services:
+- account-db
+- discovery-service
+disk_quota: 1024M
+host: account-service
+domain: local.pcfdev.io
