@@ -24,6 +24,7 @@ Topics:
 * Service Brokers
 * Spring Cloud Services
 * Integrating Microservices on Cloud Foundry
+* CI/CD with Concourse CI
 
 ### Getting setup
 
@@ -77,7 +78,13 @@ After locating and executing the PCF Dev binary, you should see the message abov
 
 You'll be asked to enter your Pivotal network credentials, which you should have handy from earlier. After authenticating on the CLI, you may be presented with an EULA for the PCF Dev beta. Read and then agree, to start the VM download and installation of PCF Dev.
 
-Congrats! You've just installed a cloud to your local machine.
+After the installation completes, you'll see some epic ASCII art and directions for how to connect to Cloud Foundry using the CLI. To login, run the following command:
+
+    $ cf login -a https://api.local.pcfdev.io --skip-ssl-validation
+
+You'll be asked for a username and password. The answer is `admin` to both prompts. After you've signed in, you'll be asked to choose your org. Choose `pcfdev-org`.
+
+Congrats! You've just installed the cloud to your local machine.
 
 #### Concourse CI
 
@@ -101,7 +108,7 @@ You should see a web page that tells you to install the CLI tools. Go ahead and 
 The binary you'll download is called `fly` and you should install it to your environment so that it will always be available from your terminal or console. For macOS you can simply move it to your `/usr/local/bin`.
 
     $ chmod +x fly
-    $ mv fly /usr/local/bin
+    $ mv fly /usr/local/bin/fly
 
 You're all set. Try running the following command from a new terminal or console window.
 
