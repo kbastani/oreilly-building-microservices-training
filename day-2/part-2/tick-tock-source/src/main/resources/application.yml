@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: tick-tock-source
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: output
