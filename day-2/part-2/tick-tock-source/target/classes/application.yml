@@ -5,5 +5,4 @@ spring:
     stream:
       bindings:
         output:
-          destination: tick-tock
-management.security.enabled: false
+          destination: output

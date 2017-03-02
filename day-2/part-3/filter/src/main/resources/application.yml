@@ -1,9 +1,13 @@
 spring:
   application:
-    name: tick-tock-source
+    name: filter
   cloud:
     stream:
       bindings:
         output:
+          destination: ${output:log}
+        input:
           destination: tick-tock
+          consumer:
+            durableSubscription: true
 management.security.enabled: false

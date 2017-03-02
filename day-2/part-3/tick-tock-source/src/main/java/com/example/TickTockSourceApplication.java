@@ -1,5 +1,6 @@
 package com.example;
 
+import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -14,6 +15,7 @@ import java.util.Objects;
 public class TickTockSourceApplication {
 
     private final Source source;
+    private final Logger log = Logger.getLogger(this.getClass());
     private static String theClock = "tick";
 
     public static void main(String[] args) {
@@ -31,7 +33,9 @@ public class TickTockSourceApplication {
                 .withPayload(theClock)
                 .build());
 
-        theClock = Objects.equals(theClock, "tick") ? "tock" : theClock;
+        log.info(theClock);
+
+        theClock = Objects.equals(theClock, "tock") ? "tick" : "tock";
     }
 
 }

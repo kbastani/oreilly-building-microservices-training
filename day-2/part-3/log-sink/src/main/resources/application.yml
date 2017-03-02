@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: log-sink
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: ${input:filter}
+          consumer:
+            durableSubscription: true
+management:
+  security:
+    enabled: false
