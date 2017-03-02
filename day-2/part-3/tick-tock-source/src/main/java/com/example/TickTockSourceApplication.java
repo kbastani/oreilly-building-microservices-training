@@ -14,7 +14,7 @@ import java.util.Objects;
 public class TickTockSourceApplication {
 
     private final Source source;
-    private String theClock = "tick";
+    private static String theClock = "tick";
 
     public static void main(String[] args) {
         SpringApplication.run(TickTockSourceApplication.class, args);
